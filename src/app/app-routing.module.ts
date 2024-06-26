@@ -1,10 +1,33 @@
-// angular import
+// Angular imports
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-// Project import
+// Project imports - Admin components
 import { AdminComponent } from './theme/layouts/admin-layout/admin-layout.component';
-import { GuestComponent } from './theme/layouts/guest/guest.component';
+import { UserManagementComponent } from './views/admin/user-management/user-management.component';
+import { SettingsComponent } from './views/admin/settings/settings.component'; // Exemple d'importation de SettingsComponent
+
+// Project imports - SIG components
+import { InteractiveMapComponent } from './views/sig/interactive-map/interactive-map.component';
+import { CaseManagementComponent } from './views/sig/case-management/case-management.component';
+import { StatisticsReportsComponent } from './views/sig/statistics-reports/statistics-reports.component';
+import { NotificationsAlertsComponent } from './views/sig/notifications-alerts/notifications-alerts.component';
+
+// Project imports - Demo components
+import { DefaultComponent } from './demo/default/dashboard/dashboard.component';
+//import { TypographyComponent } from './demo/ui-component/typography/typography.component';
+//import { UiColorComponent } from './demo/ui-component/ui-color/ui-color.component';
+//import { SamplePageComponent } from './demo/other/sample-page/sample-page.component';
+
+// Project imports - Authentication components
+//import { GuestComponent } from './theme/layouts/guest/guest.component';
+//import { LoginComponent } from './demo/authentication/login/login.component';
+//import { RegisterComponent } from './demo/authentication/register/register.component';
+
+// Project imports - Other components
+import { DocumentationComponent } from './views/documentation/documentation.component'; // Exemple d'importation de DocumentationComponent
+import { LogoutComponent } from './views/logout/logout.component';
+
 
 const routes: Routes = [
   {
@@ -18,71 +41,50 @@ const routes: Routes = [
       },
       {
         path: 'dashboard/default',
-        loadComponent: () => import('./demo/default/dashboard/dashboard.component').then((c) => c.DefaultComponent)
+        component: DefaultComponent
       },
+      
+      
+     
+      // SIG Routes
       {
-        path: 'typography',
-        loadComponent: () => import('./demo/ui-component/typography/typography.component')
-      },
-      {
-        path: 'color',
-        loadComponent: () => import('./demo/ui-component/ui-color/ui-color.component')
-      },
-      {
-        path: 'sample-page',
-        loadComponent: () => import('./demo/other/sample-page/sample-page.component')
-      },
-       // SIG Routes
-       {
         path: 'sig/interactive-map',
-        loadComponent: () => import('./views/sig/interactive-map/interactive-map.component').then((c) => c.InteractiveMapComponent)
+        component: InteractiveMapComponent
       },
       {
         path: 'sig/case-management',
-        loadComponent: () => import('./views/sig/case-management/case-management.component').then((c) => c.CaseManagementComponent)
+        component: CaseManagementComponent
       },
       {
         path: 'sig/statistics-reports',
-        loadComponent: () => import('./views/sig/statistics-reports/statistics-reports.component').then((c) => c.StatisticsReportsComponent)
+        component: StatisticsReportsComponent
       },
       {
         path: 'sig/notifications-alerts',
-        loadComponent: () => import('./views/sig/notifications-alerts/notifications-alerts.component').then((c) => c.NotificationsAlertsComponent)
+        component: NotificationsAlertsComponent
       },
       // Admin Routes
       {
         path: 'admin/user-management',
-        loadComponent: () => import('./views/admin/user-management/user-management.component').then((c) => c.UserManagementComponent)
+        component: UserManagementComponent
       },
       {
         path: 'admin/settings',
-        loadComponent: () => import('./views/admin/settings/settings.component').then((c) => c.SettingsComponent)
+        component: SettingsComponent
       },
       {
         path: 'documentation',
-        loadComponent: () => import('./views/documentation/documentation.component').then((c) => c.DocumentationComponent)
+        component: DocumentationComponent
       },
       {
         path: 'logout',
-        loadComponent: () => import('./views/logout/logout.component').then((c) => c.LogoutComponent)
+        component: LogoutComponent
       }
     ]
   },
-  {
-    path: '',
-    component: GuestComponent,
-    children: [
-      {
-        path: 'login',
-        loadComponent: () => import('./demo/authentication/login/login.component')
-      },
-      {
-        path: 'register',
-        loadComponent: () => import('./demo/authentication/register/register.component')
-      }
-    ]
-  }
+  
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

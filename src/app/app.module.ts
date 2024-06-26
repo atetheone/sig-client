@@ -9,9 +9,11 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './theme/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { CaseManagementComponent } from './views/sig/case-management/case-management.component';
+import { StatisticsReportsComponent } from './views/sig/statistics-reports/statistics-reports.component';
+
 
 @NgModule({
-  declarations: [AppComponent, CaseManagementComponent],
+  declarations: [AppComponent, CaseManagementComponent, StatisticsReportsComponent],
   imports: [BrowserModule, AppRoutingModule, SharedModule, BrowserAnimationsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]

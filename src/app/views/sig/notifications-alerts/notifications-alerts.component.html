@@ -1,1 +1,49 @@
-<p>notifications-alerts works!</p>
+<div class="notifications-alerts">
+    <h2>Notifications et Alertes</h2>
+  
+    <!-- Formulaire pour créer une nouvelle alerte -->
+    <div class="alert-form">
+      <form (ngSubmit)="addAlert()">
+        <div class="form-group">
+          <label for="alertMessage">Message d'alerte</label>
+          <input type="text" id="alertMessage" name="alertMessage" [(ngModel)]="alertMessage" required />
+        </div>
+        <div class="form-group">
+          <label for="alertType">Type d'alerte</label>
+          <select id="alertType" name="alertType" [(ngModel)]="alertType" required>
+            <option value="information">Information</option>
+            <option value="alerte">Alerte</option>
+            <option value="danger">Danger</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <button type="submit">Créer l'alerte</button>
+        </div>
+      </form>
+    </div>
+  
+    <!-- Liste des alertes -->
+    <div class="alert-list">
+      <h3>Liste des Alertes</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Message</th>
+            <th>Type</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let alert of alerts">
+            <td>{{ alert.message }}</td>
+            <td>{{ alert.type }}</td>
+            <td>
+              <button (click)="removeAlert(alert)">Supprimer</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  

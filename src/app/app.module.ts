@@ -10,10 +10,11 @@ import { SharedModule } from './theme/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { CaseManagementComponent } from './views/sig/case-management/case-management.component';
 import { StatisticsReportsComponent } from './views/sig/statistics-reports/statistics-reports.component';
+import { NotificationsAlertsComponent } from './views/sig/notifications-alerts/notifications-alerts.component';
 
 
 @NgModule({
-  declarations: [AppComponent, CaseManagementComponent, StatisticsReportsComponent],
+  declarations: [AppComponent, CaseManagementComponent, StatisticsReportsComponent, NotificationsAlertsComponent],
   imports: [BrowserModule, AppRoutingModule, SharedModule, BrowserAnimationsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]

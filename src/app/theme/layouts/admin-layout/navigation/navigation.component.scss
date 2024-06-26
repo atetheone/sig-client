@@ -1,0 +1,39 @@
+/* navigation.component.scss */
+
+.nav-container {
+    background-color: #007bff; /* Couleur de fond de la barre de navigation */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 20px; /* Espacement intérieur */
+    display: flex;
+    justify-content: space-between; /* Alignement des éléments à l'extrémité des conteneurs */
+    align-items: center; /* Alignement vertical */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  }
+  
+  .nav-logo {
+    font-size: 1.5rem; /* Taille du logo */
+    font-weight: bold; /* Gras pour le logo */
+    text-transform: uppercase; /* Texte en majuscules */
+  }
+  
+  .nav-menu {
+    list-style-type: none; /* Suppression des puces */
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav-item {
+    margin-left: 20px; /* Espacement entre les éléments du menu */
+  }
+  
+  .nav-link {
+    text-decoration: none; /* Suppression du soulignement des liens */
+    color: #fff; /* Couleur du texte */
+    transition: color 0.3s ease; /* Animation de transition pour la couleur du texte */
+  
+    &:hover {
+      color: #f8f9fa; /* Couleur du texte au survol */
+    }
+  }
+  

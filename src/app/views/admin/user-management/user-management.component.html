@@ -1,1 +1,25 @@
-<p>user-management works!</p>
+<!-- user-management.component.html -->
+<div class="user-management">
+    <h1>Gestion des utilisateurs</h1>
+    <!-- Liste des utilisateurs -->
+    <div class="user-list">
+        <h2>Liste des utilisateurs</h2>
+        <ul>
+            <li *ngFor="let user of users">{{ user.name }}</li>
+        </ul>
+    </div>
+
+    <!-- Formulaire d'ajout d'utilisateur -->
+    <div class="add-user-form">
+        <h2>Ajouter un utilisateur</h2>
+        <form (ngSubmit)="addUser()">
+            <label for="userName">Nom :</label>
+            <input type="text" id="userName" name="userName" [(ngModel)]="newUser.name" required />
+
+            <label for="userEmail">Email :</label>
+            <input type="email" id="userEmail" name="userEmail" [(ngModel)]="newUser.email" required />
+
+            <button type="submit">Ajouter l'utilisateur</button>
+        </form>
+    </div>
+</div>

@@ -11,10 +11,11 @@ import { FormsModule } from '@angular/forms';
 import { CaseManagementComponent } from './views/sig/case-management/case-management.component';
 import { StatisticsReportsComponent } from './views/sig/statistics-reports/statistics-reports.component';
 import { NotificationsAlertsComponent } from './views/sig/notifications-alerts/notifications-alerts.component';
+import { UserManagementComponent } from './views/admin/user-management/user-management.component';
 
 
 @NgModule({
-  declarations: [AppComponent, CaseManagementComponent, StatisticsReportsComponent, NotificationsAlertsComponent],
+  declarations: [AppComponent, CaseManagementComponent, StatisticsReportsComponent, NotificationsAlertsComponent, UserManagementComponent],
   imports: [BrowserModule, AppRoutingModule, SharedModule, BrowserAnimationsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]

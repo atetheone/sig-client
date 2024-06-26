@@ -1,0 +1,34 @@
+/* nav-left.component.scss */
+
+.nav-left-container {
+    width: 260px; /* Largeur de la navigation gauche */
+    background-color: #343a40; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    position: fixed; /* Position fixée pour rester visible en défilement */
+    top: 60px; /* Position à partir du haut de la page */
+    bottom: 0; /* S'étend jusqu'au bas */
+    overflow-y: auto; /* Défilement vertical si nécessaire */
+    transition: width 0.3s ease; /* Animation de transition pour la largeur */
+    z-index: 1000; /* Z-index pour la superposition */
+  
+    /* Styles pour les éléments de la navigation */
+    .nav-left-item {
+      padding: 10px 20px; /* Espacement intérieur */
+      transition: background-color 0.3s ease; /* Animation de transition pour la couleur de fond */
+  
+      &:hover {
+        background-color: #495057; /* Couleur de fond au survol */
+      }
+  
+      &.active {
+        background-color: #007bff; /* Couleur de fond de l'élément actif */
+      }
+    }
+  
+    .nav-left-link {
+      display: block; /* Affichage en bloc pour occuper toute la largeur */
+      color: inherit; /* Couleur de texte héritée */
+      text-decoration: none; /* Suppression du soulignement des liens */
+    }
+  }
+  

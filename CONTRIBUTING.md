@@ -26,7 +26,7 @@ Merci de contribuer à notre projet ! Voici quelques instructions pour vous aide
 3. **Installez les dépendances** :
 
    ```bash
-   npm install
+   npm install --legacy-peer-deps
    ```
 
 4. **Démarrez l'application** :

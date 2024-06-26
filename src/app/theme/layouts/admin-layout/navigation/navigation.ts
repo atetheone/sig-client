@@ -18,6 +18,7 @@ export interface NavigationItem {
   path?: string;
 }
 
+
 export const NavigationItems: NavigationItem[] = [
   {
     id: 'dashboard',
@@ -37,92 +38,100 @@ export const NavigationItems: NavigationItem[] = [
     ]
   },
   {
-    id: 'authentication',
-    title: 'Authentication',
+    id: 'sig',
+    title: 'Système d\'Information Géographique',
     type: 'group',
-    icon: 'icon-navigation',
+    icon: 'icon-map',
     children: [
       {
-        id: 'login',
-        title: 'Login',
+        id: 'interactive-map',
+        title: 'Carte Interactive',
         type: 'item',
         classes: 'nav-item',
-        url: '/login',
-        icon: 'login',
-        target: true,
+        url: '/sig/interactive-map',
+        icon: 'map',
         breadcrumbs: false
       },
       {
-        id: 'register',
-        title: 'Register',
+        id: 'case-management',
+        title: 'Gestion des Cas',
         type: 'item',
         classes: 'nav-item',
-        url: '/register',
-        icon: 'profile',
-        target: true,
+        url: '/sig/case-management',
+        icon: 'folder',
+        breadcrumbs: false
+      },
+      {
+        id: 'statistics-reports',
+        title: 'Statistiques et Rapports',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/sig/statistics-reports',
+        icon: 'bar-chart',
+        breadcrumbs: false
+      },
+      {
+        id: 'notifications-alerts',
+        title: 'Notifications et Alertes',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/sig/notifications-alerts',
+        icon: 'bell',
         breadcrumbs: false
       }
     ]
   },
   {
-    id: 'utilities',
-    title: 'UI Components',
+    id: 'administration',
+    title: 'Administration',
     type: 'group',
-    icon: 'icon-navigation',
+    icon: 'icon-settings',
     children: [
       {
-        id: 'typography',
-        title: 'Typography',
+        id: 'user-management',
+        title: 'Gestion des Utilisateurs',
         type: 'item',
         classes: 'nav-item',
-        url: '/typography',
-        icon: 'font-size'
+        url: '/admin/user-management',
+        icon: 'user',
+        breadcrumbs: false
       },
       {
-        id: 'color',
-        title: 'Colors',
+        id: 'settings',
+        title: 'Paramètres',
         type: 'item',
         classes: 'nav-item',
-        url: '/color',
-        icon: 'bg-colors'
-      },
-      {
-        id: 'tabler',
-        title: 'Tabler',
-        type: 'item',
-        classes: 'nav-item',
-        url: 'https://ant.design/components/icon',
-        icon: 'ant-design',
-        target: true,
-        external: true
+        url: '/admin/settings',
+        icon: 'settings',
+        breadcrumbs: false
       }
     ]
   },
-
   {
-    id: 'other',
-    title: 'Other',
+    id: 'help',
+    title: 'Aide et Documentation',
     type: 'group',
-    icon: 'icon-navigation',
+    icon: 'icon-help',
     children: [
       {
-        id: 'sample-page',
-        title: 'Sample Page',
-        type: 'item',
-        url: '/sample-page',
-        classes: 'nav-item',
-        icon: 'chrome'
-      },
-      {
-        id: 'document',
-        title: 'Document',
+        id: 'documentation',
+        title: 'Documentation',
         type: 'item',
         classes: 'nav-item',
         url: 'https://codedthemes.gitbook.io/mantis-angular/',
-        icon: 'question',
+        icon: 'book',
         target: true,
         external: true
       }
     ]
+  },
+  {
+    id: 'logout',
+    title: 'Déconnexion',
+    type: 'item',
+    classes: 'nav-item',
+    url: '/logout',
+    icon: 'logout',
+    breadcrumbs: false
   }
 ];

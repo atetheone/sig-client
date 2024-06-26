@@ -2,7 +2,7 @@
 
 ## Description
 
-SIG Client est une application client pour un Système d'Information Géographique (SIG) destiné à la surveillance des cas d'hépatite E. Cette application utilise le template `mantis-free-angular-admin-template` pour offrir une interface utilisateur moderne et intuitive. 
+SIG Client est une application client pour un Système d'Information Géographique (SIG) destiné à la surveillance des cas d'hépatite E. Cette application utilise le template `mantis-free-angular-admin-template` pour offrir une interface utilisateur moderne et intuitive.  
 
 Le projet vise à fournir des fonctionnalités complètes pour la gestion et la visualisation des données géospatiales relatives aux cas d'hépatite E, facilitant ainsi la surveillance et la réponse aux épidémies.
 

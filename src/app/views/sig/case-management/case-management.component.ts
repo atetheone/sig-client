@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './case-management.component.html',
-  styleUrl: './case-management.component.scss'
+  styleUrls: ['./case-management.component.scss']
 })
-export class CaseManagementComponent {
-
-}
+export class CaseManagementComponent {}

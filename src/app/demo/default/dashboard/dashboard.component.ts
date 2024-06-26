@@ -38,44 +38,44 @@ export class DefaultComponent {
 
   AnalyticEcommerce = [
     {
-      title: 'Total Page Views',
-      amount: '4,42,236',
-      background: 'bg-light-primary ',
-      border: 'border-primary',
+      title: 'Total des Cas',
+      amount: '1,245',
+      background: 'bg-light-success',
+      border: 'border-success',
       icon: 'rise',
-      percentage: '59.3%',
-      color: 'text-primary',
-      number: '35,000'
+      percentage: '+4.5%',
+      color: 'text-success',
+      number: '45 cas'
     },
     {
-      title: 'Total Users',
-      amount: '78,250',
-      background: 'bg-light-primary ',
-      border: 'border-primary',
-      icon: 'rise',
-      percentage: '70.5%',
-      color: 'text-primary',
-      number: '8,900'
+      title: 'Nouveaux Cas',
+      amount: '34',
+      background: 'bg-light-danger',
+      border: 'border-danger',
+      icon: 'arrow_upward',
+      percentage: '+1.2%',
+      color: 'text-danger',
+      number: '4 cas'
     },
     {
-      title: 'Total Order',
-      amount: '18,800',
-      background: 'bg-light-warning ',
+      title: 'Cas Actifs',
+      amount: '123',
+      background: 'bg-light-warning',
       border: 'border-warning',
-      icon: 'fall',
-      percentage: '27.4%',
+      icon: 'warning',
+      percentage: '-2.3%',
       color: 'text-warning',
-      number: '1,943'
+      number: '3 cas'
     },
     {
-      title: 'Total Sales',
-      amount: '$35,078',
-      background: 'bg-light-warning ',
-      border: 'border-warning',
-      icon: 'fall',
-      percentage: '27.4%',
-      color: 'text-warning',
-      number: '$20,395'
+      title: 'Cas Résolus',
+      amount: '1,112',
+      background: 'bg-light-info',
+      border: 'border-info',
+      icon: 'check_circle',
+      percentage: '+5.6%',
+      color: 'text-info',
+      number: '59 cas'
     }
   ];
 
@@ -83,26 +83,47 @@ export class DefaultComponent {
     {
       background: 'text-success bg-light-success',
       icon: 'gift',
-      title: 'Order #002434',
-      time: 'Today, 2:00 AM',
-      amount: '+ $1,430',
+      title: 'Donation reçue',
+      time: 'Aujourd\'hui, 2:00 AM',
+      amount: '+ $500',
       percentage: '78%'
     },
     {
       background: 'text-primary bg-light-primary',
       icon: 'message',
-      title: 'Order #984947',
-      time: '5 August, 1:45 PM',
-      amount: '- $302',
+      title: 'Téléchargement de rapport',
+      time: '5 août, 1:45 PM',
+      amount: '15 rapports',
       percentage: '8%'
     },
     {
       background: 'text-danger bg-light-danger',
       icon: 'setting',
-      title: 'Order #988784',
-      time: '7 hours ago',
-      amount: '- $682',
+      title: 'Alerte de sécurité',
+      time: 'Il y a 7 heures',
+      amount: '',
       percentage: '16%'
+    }
+  ];
+
+  recentReports = [
+    {
+      date: '2024-06-15',
+      title: 'Rapport Hebdomadaire',
+      statusType: 'badge-success',
+      status: 'Terminé'
+    },
+    {
+      date: '2024-06-08',
+      title: 'Rapport Mensuel',
+      statusType: 'badge-warning',
+      status: 'En cours'
+    },
+    {
+      date: '2024-05-30',
+      title: 'Rapport Trimestriel',
+      statusType: 'badge-danger',
+      status: 'En retard'
     }
   ];
 }

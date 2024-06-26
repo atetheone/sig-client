@@ -31,6 +31,40 @@ const routes: Routes = [
       {
         path: 'sample-page',
         loadComponent: () => import('./demo/other/sample-page/sample-page.component')
+      },
+       // SIG Routes
+       {
+        path: 'sig/interactive-map',
+        loadComponent: () => import('./views/sig/interactive-map/interactive-map.component').then((c) => c.InteractiveMapComponent)
+      },
+      {
+        path: 'sig/case-management',
+        loadComponent: () => import('./views/sig/case-management/case-management.component').then((c) => c.CaseManagementComponent)
+      },
+      {
+        path: 'sig/statistics-reports',
+        loadComponent: () => import('./views/sig/statistics-reports/statistics-reports.component').then((c) => c.StatisticsReportsComponent)
+      },
+      {
+        path: 'sig/notifications-alerts',
+        loadComponent: () => import('./views/sig/notifications-alerts/notifications-alerts.component').then((c) => c.NotificationsAlertsComponent)
+      },
+      // Admin Routes
+      {
+        path: 'admin/user-management',
+        loadComponent: () => import('./views/admin/user-management/user-management.component').then((c) => c.UserManagementComponent)
+      },
+      {
+        path: 'admin/settings',
+        loadComponent: () => import('./views/admin/settings/settings.component').then((c) => c.SettingsComponent)
+      },
+      {
+        path: 'documentation',
+        loadComponent: () => import('./views/documentation/documentation.component').then((c) => c.DocumentationComponent)
+      },
+      {
+        path: 'logout',
+        loadComponent: () => import('./views/logout/logout.component').then((c) => c.LogoutComponent)
       }
     ]
   },

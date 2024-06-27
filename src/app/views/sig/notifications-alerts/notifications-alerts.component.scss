@@ -1,69 +1,87 @@
 .notifications-alerts {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  
-    h2, h3 {
-      text-align: center;
-    }
-  
-    .alert-form {
-      margin-bottom: 20px;
-  
-      .form-group {
-        margin-bottom: 15px;
-  
-        label {
-          display: block;
-          margin-bottom: 5px;
-          font-weight: bold;
-        }
-  
-        input, select {
-          width: 100%;
-          padding: 8px;
-          box-sizing: border-box;
-        }
-  
-        button {
-          padding: 10px 20px;
-          background-color: #007bff;
-          color: white;
-          border: none;
-          cursor: pointer;
-        }
-        button:hover {
-          background-color: #0056b3;
-        }
-      
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+
+  h2, h3 {
+    text-align: center;
+  }
+
+  .alert-form {
+    margin-bottom: 20px;
+
+    .form-group {
+      margin-bottom: 15px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
       }
-    }
-  
-    .alert-list {
-      margin-top: 20px;
-  
-      table {
+
+      input, select {
         width: 100%;
-        border-collapse: collapse;
-  
-        th, td {
-          border: 1px solid #ccc;
-          padding: 8px;
-          text-align: left;
-        }
-  
-        th {
-          background-color: #f4f4f4;
-        }
-  
-        button {
-          padding: 5px 10px;
-          background-color: #f44336;
-          color: white;
-          border: none;
-          cursor: pointer;
-        }
+        padding: 8px;
+        box-sizing: border-box;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .error-message {
+        color: red; /* Couleur rouge pour les messages d'erreur */
+        font-size: 12px;
+        margin-top: 5px;
       }
     }
   }
-  
+
+  .alert-list {
+    margin-top: 20px;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f4f4f4;
+      }
+
+      button {
+        padding: 5px 10px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-align: center;
+    display: inline-block;
+    z-index: 999;
+  }
+}

@@ -18,7 +18,7 @@ export class CaseManagementComponent implements OnInit {
   showNotification: boolean = false;
   showDeleteNotification: boolean = false;
   
-  formSubmitted: boolean = false; // Ajout de la propriété formSubmitted
+  formSubmitted: boolean = false;
 
   ngOnInit(): void {
     this.loadCases();

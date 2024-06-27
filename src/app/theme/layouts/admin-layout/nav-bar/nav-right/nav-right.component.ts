@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 
 // project import
 import { SharedModule } from 'src/app/theme/shared/shared.module';
+import { AuthService } from 'src/app/services/auth.service';
 
 // third party
 
@@ -42,7 +43,10 @@ export class NavRightComponent {
   windowWidth: number;
   screenFull: boolean = true;
 
-  constructor(private iconService: IconService) {
+  constructor(
+    private iconService: IconService,
+    private authService: AuthService
+  ) {
     this.windowWidth = window.innerWidth;
     this.iconService.addIcon(
       ...[
@@ -108,4 +112,8 @@ export class NavRightComponent {
       title: 'History'
     }
   ];
+
+  logout() {
+    this.authService.logout();
+  }
 }

@@ -27,12 +27,19 @@ import { DefaultComponent } from './demo/default/dashboard/dashboard.component';
 // Project imports - Other components
 import { DocumentationComponent } from './views/documentation/documentation.component'; // Exemple d'importation de DocumentationComponent
 import { LogoutComponent } from './views/logout/logout.component';
+import { LoginComponent } from './demo/authentication/login/login.component';
+import { authGuard } from './guard/auth.guard';
 
 
 const routes: Routes = [
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: '',
     component: AdminComponent,
+    canActivate: [authGuard],
     children: [
       {
         path: '',

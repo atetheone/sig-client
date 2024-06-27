@@ -35,6 +35,15 @@ export class StatisticsReportsComponent implements OnInit {
     this.dateError = !date;
     this.descriptionError = !description;
 
+    // Vérification de la date du rapport
+    const today = new Date().toISOString().split('T')[0];
+    if (date > today) {
+      this.dateError = true;
+      return;
+    } else {
+      this.dateError = false;
+    }
+
     if (this.titleError || this.dateError || this.descriptionError) {
       return;
     }
@@ -47,6 +56,9 @@ export class StatisticsReportsComponent implements OnInit {
     setTimeout(() => {
       this.showAddNotification = false;
     }, 3000); // Masquer la notification après 3 secondes
+
+    // Réinitialiser les erreurs une fois le rapport ajouté avec succès
+    this.resetErrors();
   }
 
   deleteReport(index: number): void {
@@ -61,5 +73,11 @@ export class StatisticsReportsComponent implements OnInit {
 
   private saveReports(): void {
     localStorage.setItem('reports', JSON.stringify(this.reports));
+  }
+
+  private resetErrors(): void {
+    this.titleError = false;
+    this.dateError = false;
+    this.descriptionError = false;
   }
 }

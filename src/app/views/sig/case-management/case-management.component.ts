@@ -17,12 +17,16 @@ export class CaseManagementComponent implements OnInit {
 
   showNotification: boolean = false;
   showDeleteNotification: boolean = false;
+  
+  formSubmitted: boolean = false; // Ajout de la propriété formSubmitted
 
   ngOnInit(): void {
     this.loadCases();
   }
 
   saveCase(): void {
+    this.formSubmitted = true; // Marquer le formulaire comme soumis
+
     this.patientNameError = !this.patientName;
     this.locationError = !this.location;
     
@@ -56,6 +60,9 @@ export class CaseManagementComponent implements OnInit {
     setTimeout(() => {
       this.showNotification = false;
     }, 3000); // Cacher la notification après 3 secondes
+
+    // Réinitialiser les erreurs une fois le cas enregistré avec succès
+    this.resetErrors();
   }
 
   deleteCase(index: number): void {
@@ -72,5 +79,24 @@ export class CaseManagementComponent implements OnInit {
 
   loadCases(): void {
     this.cases = JSON.parse(localStorage.getItem('savedCases') || '[]');
+  }
+
+  private resetErrors(): void {
+    this.patientNameError = false;
+    this.caseDateError = false;
+    this.locationError = false;
+  }
+
+  // Méthodes pour gérer la disparition des messages d'erreur
+  onPatientNameInput(): void {
+    this.patientNameError = false;
+  }
+
+  onCaseDateInput(): void {
+    this.caseDateError = false;
+  }
+
+  onLocationInput(): void {
+    this.locationError = false;
   }
 }

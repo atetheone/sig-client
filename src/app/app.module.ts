@@ -12,10 +12,11 @@ import { CaseManagementComponent } from './views/sig/case-management/case-manage
 import { StatisticsReportsComponent } from './views/sig/statistics-reports/statistics-reports.component';
 import { NotificationsAlertsComponent } from './views/sig/notifications-alerts/notifications-alerts.component';
 import { UserManagementComponent } from './views/admin/user-management/user-management.component';
+import { SettingsComponent } from './views/admin/settings/settings.component';
 
 
 @NgModule({
-  declarations: [AppComponent, CaseManagementComponent, StatisticsReportsComponent, NotificationsAlertsComponent, UserManagementComponent],
+  declarations: [AppComponent, CaseManagementComponent, StatisticsReportsComponent, NotificationsAlertsComponent, UserManagementComponent, SettingsComponent],
   imports: [BrowserModule, AppRoutingModule, SharedModule, BrowserAnimationsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]

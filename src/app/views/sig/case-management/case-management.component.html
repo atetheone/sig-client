@@ -1,44 +1,57 @@
 <div class="case-management">
-    <h2>Gestion des Cas d'Hépatite E</h2>
-    <div class="case-form">
+  <h2>Gestion des Cas d'Hépatite E</h2>
+  <div class="case-form">
       <form (ngSubmit)="saveCase()">
-        <div class="form-group">
-          <label for="patientName">Nom du Patient</label>
-          <input type="text" id="patientName" name="patientName" [(ngModel)]="patientName" />
-        </div>
-        <div class="form-group">
-          <label for="caseDate">Date du Cas</label>
-          <input type="date" id="caseDate" name="caseDate" [(ngModel)]="caseDate" />
-        </div>
-        <div class="form-group">
-          <label for="location">Localisation</label>
-          <input type="text" id="location" name="location" [(ngModel)]="location" />
-        </div>
-        <div class="form-group">
-          <button type="submit">Enregistrer le cas</button>
-        </div>
+          <div class="form-group">
+              <label for="patientName">Nom du Patient</label>
+              <input type="text" id="patientName" name="patientName" [(ngModel)]="patientName" required />
+              <div *ngIf="patientNameError" class="error-message">Le nom du patient est obligatoire.</div>
+          </div>
+          <div class="form-group">
+              <label for="caseDate">Date du Cas</label>
+              <input type="date" id="caseDate" name="caseDate" [(ngModel)]="caseDate" required />
+              <div *ngIf="caseDateError" class="error-message">La date du cas est obligatoire.</div>
+          </div>
+          <div class="form-group">
+              <label for="location">Localisation</label>
+              <input type="text" id="location" name="location" [(ngModel)]="location" required />
+              <div *ngIf="locationError" class="error-message">La localisation est obligatoire.</div>
+          </div>
+          <div class="form-group">
+              <button type="submit">Enregistrer le cas</button>
+          </div>
       </form>
-    </div>
-  
-    <div class="case-list">
+  </div>
+
+  <div class="case-list">
       <h3>Cas Enregistrés</h3>
       <table>
-        <thead>
-          <tr>
-            <th>Nom du Patient</th>
-            <th>Date du Cas</th>
-            <th>Localisation</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let caseData of cases">
-            <td>{{ caseData.patientName }}</td>
-            <td>{{ caseData.caseDate }}</td>
-            <td>{{ caseData.location }}</td>
-          </tr>
-        </tbody>
+          <thead>
+              <tr>
+                  <th>Nom du Patient</th>
+                  <th>Date du Cas</th>
+                  <th>Localisation</th>
+                  <th>Actions</th> <!-- Nouvelle colonne pour les actions -->
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let caseData of cases; let i = index">
+                  <td>{{ caseData.patientName }}</td>
+                  <td>{{ caseData.caseDate }}</td>
+                  <td>{{ caseData.location }}</td>
+                  <td><button (click)="deleteCase(i)" class="delete-button">Supprimer</button></td> <!-- Bouton de suppression -->
+              </tr>
+          </tbody>
       </table>
-    </div>
-  
-   
-  
+  </div>
+
+  <!-- Notification de suppression -->
+  <div *ngIf="showDeleteNotification" class="notification">
+      Cas supprimé avec succès.
+  </div>
+
+  <!-- Notification d'enregistrement -->
+  <div *ngIf="showNotification" class="notification">
+      Cas enregistré.
+  </div>
+</div>

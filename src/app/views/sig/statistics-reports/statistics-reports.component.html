@@ -1,44 +1,61 @@
 <div class="statistics-reports">
-    <h2>Rapports de Statistiques</h2>
+  <h2>Rapports de Statistiques</h2>
 
-    <!-- Formulaire pour ajouter un nouveau rapport -->
-    <form (submit)="addReport(title.value, date.value, description.value)">
-        <div class="form-group">
-            <label for="title">Titre du Rapport</label>
-            <input type="text" id="title" name="title" required #title>
-        </div>
-        <div class="form-group">
-            <label for="date">Date</label>
-            <input type="date" id="date" name="date" required #date>
-        </div>
-        <div class="form-group">
-            <label for="description">Description</label>
-            <textarea id="description" name="description" required #description></textarea>
-        </div>
-        <button type="submit">Ajouter Rapport</button>
-    </form>
-
-    <!-- Liste des rapports existants -->
-    <div class="report-list" *ngIf="reports.length > 0">
-        <h3>Liste des Rapports</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Titre du Rapport</th>
-                    <th>Date</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let report of reports">
-                    <td>{{ report.title }}</td>
-                    <td>{{ report.date }}</td>
-                    <td>{{ report.description }}</td>
-                </tr>
-            </tbody>
-        </table>
+  <!-- Formulaire pour ajouter un nouveau rapport -->
+  <form (submit)="addReport(title.value, date.value, description.value)">
+    <div class="form-group">
+      <label for="title">Titre du Rapport</label>
+      <input type="text" id="title" name="title" required #title>
+      <div *ngIf="titleError" class="error-message">Le titre est obligatoire.</div>
     </div>
+    <div class="form-group">
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date" required #date>
+      <div *ngIf="dateError" class="error-message">La date est obligatoire.</div>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" name="description" required #description></textarea>
+      <div *ngIf="descriptionError" class="error-message">La description est obligatoire.</div>
+    </div>
+    <button type="submit">Ajouter Rapport</button>
+  </form>
 
-    <!-- Afficher un message si aucun rapport n'est disponible -->
-    <p *ngIf="reports.length === 0">Aucun rapport disponible pour le moment.</p>
+  <!-- Liste des rapports existants -->
+  <div class="report-list" *ngIf="reports.length > 0">
+    <h3>Liste des Rapports</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Titre du Rapport</th>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let report of reports; let i = index">
+          <td>{{ report.title }}</td>
+          <td>{{ report.date }}</td>
+          <td>{{ report.description }}</td>
+          <td>
+            <button class="delete-button" (click)="deleteReport(i)">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Afficher un message si aucun rapport n'est disponible -->
+  <p *ngIf="reports.length === 0">Aucun rapport disponible pour le moment.</p>
+
+  <!-- Notification d'ajout -->
+  <div *ngIf="showAddNotification" class="notification">
+    Nouveau rapport ajouté avec succès.
+  </div>
+
+  <!-- Notification de suppression -->
+  <div *ngIf="showDeleteNotification" class="notification">
+    Rapport supprimé avec succès.
+  </div>
 </div>

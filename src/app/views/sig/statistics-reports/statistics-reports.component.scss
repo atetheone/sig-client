@@ -2,51 +2,51 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  
+
   h2, h3 {
     text-align: center;
   }
-  
+
   .report-list {
     margin-top: 20px;
-  
+
     table {
       width: 100%;
       border-collapse: collapse;
-  
+
       th, td {
         border: 1px solid #ccc;
         padding: 12px;
         text-align: left;
       }
-  
+
       th {
         background-color: #f4f4f4;
         font-weight: bold;
       }
-  
+
       td {
         background-color: #ffffff;
       }
-  
+
       tr:nth-child(even) {
         background-color: #f2f2f2;
       }
     }
   }
-  
+
   form {
     margin-top: 20px;
-  
+
     .form-group {
       margin-bottom: 15px;
-  
+
       label {
         display: block;
         font-weight: bold;
         margin-bottom: 8px;
       }
-  
+
       input[type="text"],
       input[type="date"],
       textarea {
@@ -57,12 +57,18 @@
         border-radius: 4px;
         box-sizing: border-box;
       }
-  
+
       textarea {
         height: 100px;
       }
+
+      .error-message {
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+      }
     }
-  
+
     button[type="submit"] {
       background-color: #007bff;
       color: white;
@@ -72,9 +78,38 @@
       cursor: pointer;
       font-size: 16px;
     }
-  
+
     button[type="submit"]:hover {
       background-color: #0056b3;
     }
   }
+
+  .delete-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .delete-button:hover {
+    background-color: #c82333;
+  }
+
+  .notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-align: center;
+    z-index: 9999; /* Ensure it's above other content */
+  }
+  
+
 }

@@ -11,33 +11,63 @@ export class CaseManagementComponent implements OnInit {
   location: string = '';
   cases: any[] = [];
 
+  patientNameError: boolean = false;
+  caseDateError: boolean = false;
+  locationError: boolean = false;
+
+  showNotification: boolean = false;
+  showDeleteNotification: boolean = false;
+
   ngOnInit(): void {
     this.loadCases();
   }
 
   saveCase(): void {
+    this.patientNameError = !this.patientName;
+    this.locationError = !this.location;
+    
+    // Vérification de la date du cas
+    const today = new Date().toISOString().split('T')[0];
+    if (!this.caseDate || this.caseDate > today) {
+      this.caseDateError = true;
+      return;
+    } else {
+      this.caseDateError = false;
+    }
+
     const caseData = {
       patientName: this.patientName,
       caseDate: this.caseDate,
       location: this.location
     };
 
-    // Charger les cas existants depuis le localStorage
     let savedCases = JSON.parse(localStorage.getItem('savedCases') || '[]');
     savedCases.push(caseData);
 
-    // Convertir le tableau en chaîne JSON et le stocker dans le localStorage
     localStorage.setItem('savedCases', JSON.stringify(savedCases));
 
-    // Réinitialiser les champs du formulaire après sauvegarde
     this.patientName = '';
     this.caseDate = '';
     this.location = '';
 
-    // Recharger les cas pour afficher la mise à jour
     this.loadCases();
 
-    alert('Cas enregistré localement.');
+    this.showNotification = true;
+    setTimeout(() => {
+      this.showNotification = false;
+    }, 3000); // Cacher la notification après 3 secondes
+  }
+
+  deleteCase(index: number): void {
+    let savedCases = JSON.parse(localStorage.getItem('savedCases') || '[]');
+    savedCases.splice(index, 1);
+    localStorage.setItem('savedCases', JSON.stringify(savedCases));
+    this.loadCases();
+
+    this.showDeleteNotification = true;
+    setTimeout(() => {
+      this.showDeleteNotification = false;
+    }, 3000); // Cacher la notification de suppression après 3 secondes
   }
 
   loadCases(): void {

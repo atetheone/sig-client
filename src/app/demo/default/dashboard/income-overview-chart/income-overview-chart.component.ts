@@ -40,6 +40,7 @@ export type ChartOptions = {
   styleUrl: './income-overview-chart.component.scss'
 })
 export class IncomeOverviewChartComponent implements OnInit {
+  totalCases: number = 25;
   // public props
   @ViewChild('chart') chart!: ChartComponent;
   chartOptions!: Partial<ChartOptions>;
@@ -66,7 +67,7 @@ export class IncomeOverviewChartComponent implements OnInit {
       },
       series: [
         {
-          data: [80, 95, 70, 42, 65, 55, 78]
+          data: [4, 0, 9, 4, 1, 3, 4]
         }
       ],
       stroke: {

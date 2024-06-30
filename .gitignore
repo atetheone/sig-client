@@ -43,6 +43,7 @@ jspm_packages/
 .angular
 .github
 .hintrc
+.nx
 
 # TypeScript v1 declaration files
 typings/

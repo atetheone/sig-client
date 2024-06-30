@@ -33,6 +33,7 @@ export class UserManagementComponent implements OnInit {
       this.saveUsers();
       this.newUser = { name: '', email: '' }; // Clear form fields after adding user
       this.showNotificationMessage('Utilisateur ajouté avec succès.');
+      this.formSubmitted = false; // Reset form submission flag
     }
   }
 

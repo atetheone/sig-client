@@ -13,7 +13,7 @@ import { StatisticsReportsComponent } from './views/sig/statistics-reports/stati
 import { NotificationsAlertsComponent } from './views/sig/notifications-alerts/notifications-alerts.component';
 import { UserManagementComponent } from './views/admin/user-management/user-management.component';
 import { SettingsComponent } from './views/admin/settings/settings.component';
-import { LoginModule } from './demo/authentication/login/login.module';
+import { LoginModule } from './views/login/login.module';
 
 
 @NgModule({

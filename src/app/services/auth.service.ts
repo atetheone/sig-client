@@ -18,7 +18,6 @@ export class AuthService {
   ) {}
 
   login(email: string, password: string): void {
-
     this.http.post<LoginResponse>(`${environment.apiUri}/auth/login`, { email, password })
       .subscribe(
         (res: LoginResponse) => {

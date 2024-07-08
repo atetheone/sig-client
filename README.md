@@ -24,7 +24,7 @@ Le projet vise à fournir des fonctionnalités complètes pour la gestion et la 
 - **TypeScript** : Langage de programmation utilisé pour le développement.
 - **SCSS** : Préprocesseur CSS pour le stylage de l'application.
 - **Chart.js** : Bibliothèque pour les graphiques et visualisations de données.
-- **OpenLayers** : Bibliothèque JavaScript pour afficher des cartes interactives.
+- **Leaflet** : Bibliothèque JavaScript pour afficher des cartes interactives.
 
 ## Objectif du Projet
 

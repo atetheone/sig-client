@@ -48,7 +48,4 @@ export class AuthService {
     return !!token;
   }
 
-  private generateMockToken(): string {
-    return 'mock-token';
-  }
 }

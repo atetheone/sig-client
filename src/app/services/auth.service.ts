@@ -31,12 +31,6 @@ export class AuthService {
       );  
   }
 
-  // if (email === this.mockEmail && password === this.mockPassword) {
-    //   const token = this.generateMockToken();
-    //   localStorage.setItem(this.tokenKey, token);
-    //   return true;
-    // }
-    // return false;
 
   logout(): void {
     localStorage.removeItem(this.tokenKey);

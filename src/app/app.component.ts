@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   // public props
-  title = 'mantis-free-version';
+  title = "Système d'Information Géographique (SIG) pour la surveillance de l'hépatite E au Sénégal";
 }
